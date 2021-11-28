@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+main { overflow: hidden; }
+
+.col { padding: 3rem; }
+
+.col-info {
+    background: rgb(183, 54, 235);
+    background: linear-gradient(0deg, rgb(226, 111, 236) 0%, rgb(134, 57, 197) 63%);
+}
+
+.col-info p { line-height: 1.6; }
+
+.col-img {
+    background-position: center;
+    background-size: cover;
+}
+
+.titulo {
+    text-transform: uppercase; 
+}
+.titulo span { color: #fff; }
+
+.btn {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    padding: .8rem 1rem;
+    display: inline-block;
+    margin-top: .5rem;
+    transition: all .3s;
+}
+.btn:hover {
+    background: #fff;
+    color: #000;
+    animation: headShake;
+    animation-duration: 3s;
+}
+
+/* Imagen solo para mobile, para que no cargue una muy grande */
+@media screen and (max-width:760px) {
+    .col-img {
+        background-image: url(https://images.unsplash.com/photo-1581599760865-bf4ff2c4e1ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2036&q=80);
+        height: 100vw;
+    }
+}
+
+/* Estilos para desktop */
+@media screen and (min-width:760px) {
+    .contenedor { display: flex; }
+
+    .col { width: 50%; }
+
+    .col-info {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .col-info p { font-size: 1.2rem; }
+
+    /* En desktop que cargue una imagen mas grande */
+    .col-img { background-image: url(https://images.unsplash.com/photo-1581599760865-bf4ff2c4e1ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2036&q=80); }
+
+    .titulo { font-size: 3rem; }
+
+    .titulo span { display: block; }
+
+}
+
+@media screen and (min-width:1200px) {
+    .col-info { padding: 1rem 12rem 1rem 4rem; }
+}
